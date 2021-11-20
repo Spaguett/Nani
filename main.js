@@ -7,7 +7,7 @@ const prefix = '.'
 const conn = require("./lib/index")
 conn.connect()
 const client = conn.client
-leo.on('group-participants-update', async (anu) => {
+client.on('group-participants-update', async (anu) => {
     const _welcom= JSON.parse(fs.readFileSync('./src/welkom.json'))
 
     if (!_welcom.includes(anu.jid)) return
@@ -27,7 +27,7 @@ if (num.startsWith('44')) return samu330.groupRemove(mdata.id, [num])
 try {pushnem = choute.key.fromMe ? leo.user.name : conts.notify || conts.vname || conts.name || '-'
     } catch {pushnem = num.split('@')[0]}
     try {
-    ppimg = await leo.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)} 
+    ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)} 
     catch {
     ppimg = 'https://centromedicomontemar.cl/wp-content/uploads/2015/06/sin-perfil.png'}  
     
@@ -39,21 +39,21 @@ Esperemos la pases bien y te gust el grupo.
 Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
 
     let fotoP = await getBuffer(ppimg)
-    leo.sendMessage(mdata.id, fotoP, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+    client.sendMessage(mdata.id, fotoP, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
     
     }  else if (anu.action == 'remove') {
     num = anu.participants[0]
   
     teks = `
     @${num.split('@')[0]} Adios no se te extrañara, no comas nada del suelo que estan envenenando a los perros.`
-    leo.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
+    client.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
   
     } else if (anu.action == 'promote') {
     num = anu.participants[0]
-    try { ppimg = await leo.getProfilePicture(`${num.split('@')[0]}@c.us`)
+    try { ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
     } catch {ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
     }
-    thu = await leo.getStatus(anu.participants[0], MessageType.text)
+    thu = await client.getStatus(anu.participants[0], MessageType.text)
     teks = 
 `👑 *NUEVO ADMIN* 👑
 👤 *Nombre:* @${num.split('@')[0]}
@@ -61,7 +61,7 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
 🌎 *Grupo:* ${mdata.subject}
 *Felicitaciones eres uno de los administradores.*`
    let buff = await getBuffer(ppimg)
-    leo.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+    client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
     } else if (anu.action == 'demote') {
     num = anu.participants[0]
     try {
@@ -77,7 +77,7 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
 🌎 *Grupo:* ${mdata.subject} 
 *F chota ya no eres administrador.*`
     let buff = await getBuffer(ppimg)
-    leo.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+    client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
     }
     } catch (e) {
     console.log('Error : %s', color(e, 'red'))
