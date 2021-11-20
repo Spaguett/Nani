@@ -12,7 +12,7 @@ client.on('group-participants-update', async (anu) => {
 
     if (!_welcom.includes(anu.jid)) return
     try {
-    const mdata = await leo.groupMetadata(anu.jid)
+    const mdata = await client.groupMetadata(anu.jid)
     console.log(anu)
     if (anu.action == 'add') {               
     num = anu.participants[0]  
@@ -20,7 +20,7 @@ client.on('group-participants-update', async (anu) => {
 
     
 
-try {pushnem = choute.key.fromMe ? leo.user.name : conts.notify || conts.vname || conts.name || '-'
+try {pushnem = choute.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
     } catch {pushnem = num.split('@')[0]}
     try {
     ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)} 
