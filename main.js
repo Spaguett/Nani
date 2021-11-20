@@ -160,18 +160,26 @@ client.sendMessage(from, 'Hola? Te haz podido comunicar.', MessageType.text, {qu
 }
 
 //ZONA DE COMANDOS	
+case 'welcome':
+  case 'bv':
+  case 'bienvenidas':
+  case 'bienvenida':
 
-
-
-
-
-
-
-
-
-
-
-
+              if (args.length < 1) return reply(`*BIENVENIDAS*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+              if ((args[0]) === 'on') {
+              if (isWelkom) return reply('La bienvenida ya esta activa en este grupo')
+              welkom.push(from)
+              fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+              reply(`Bienvenida activada exitosamente para *${groupMetadata.subject}*`)
+              } else if ((args[0]) === 'off') {
+              if (!isWelkom) return reply('Bienvenida ya esta desactivada')
+              welkom.splice(from, 1)
+              fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+              reply(`La función de Bienvenida se desactivo en el grupo *${groupMetadata.subject}*`)
+              } else {
+              reply(`*BIENVENIDAS*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+              }
+              break
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted: { key: {
 fromMe: false,
