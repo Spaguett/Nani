@@ -146,7 +146,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "𝕿𝖍ٌ𝖊𝕮𝖍𝖔𝖚𝖙𝖊", 'jpegThumbnail': fs.readFileSync('./media/logo.jpg')}}
+"documentMessage": { "title": "GARU", 'jpegThumbnail': fs.readFileSync('./media/logo.jpg')}}
 }})
 }
 
@@ -172,12 +172,12 @@ case 'bienvenida':
               if ((args[0]) === 'on') {
               if (isWelkom) return reply('Este grupo ya tenia la bienvenida activa')
               Bienvenida.push(from)
-              fs.writeFileSync('./almacen/bienvenida.json', JSON.stringify(Bienvenida))
+              fs.writeFileSync('./src/welkom.json', JSON.stringify(Bienvenida))
               reply(`Bienvenida activada exitosamente para *${groupMetadata.subject}*`)
               } else if ((args[0]) === 'off') {
               if (!isWelkom) return reply('Bienvenida ya esta desactivada')
               Bienvenida.splice(from, 1)
-              fs.writeFileSync('./almacen/bienvenida.json', JSON.stringify(Bienvenida))
+              fs.writeFileSync('./src/welkom.json', JSON.stringify(Bienvenida))
               reply(`La función de Bienvenida se desactivo en el grupo *${groupMetadata.subject}*`)
               } else {
               reply(`${actodb}`)
