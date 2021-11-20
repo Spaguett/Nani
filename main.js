@@ -15,6 +15,7 @@ const client = conn.client
 
 //SRC
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
+//Bienvenidos al Imalaya 
 client.on('group-participants-update', async (anu) => {
     const _welcom= JSON.parse(fs.readFileSync('./src/welkom.json'))
 
