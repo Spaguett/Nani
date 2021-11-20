@@ -24,7 +24,7 @@ Clona este repositorio
 ```
 Inicia la instalacion
 ```bash
-- cd GARU
+- cd Nani 
 - bash install.sh
 ```
 PARA INICIAR EL BOT
