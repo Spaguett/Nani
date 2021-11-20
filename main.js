@@ -33,8 +33,8 @@ try {pushnem = choute.key.fromMe ? client.user.name : conts.notify || conts.vnam
     ppimg = 'https://centromedicomontemar.cl/wp-content/uploads/2015/06/sin-perfil.png'}  
     
     teks = 
-`😙Hola, @${num.split('@')[0]}
-*Bienvenido a ${mdata.subject}
+`�👾Hola, @${num.split('@')[0]}
+*Sois bienvenido a ${mdata.subject}
     
 Esperemos la pases bien y te gust el grupo.
 Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
@@ -46,7 +46,7 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
     num = anu.participants[0]
   
     teks = `
-    @${num.split('@')[0]} Adios no se te extrañara, no comas nada del suelo que estan envenenando a los perros.`
+    @${num.split('@')[0]} Chau. toma awa y no dejes de respirar por que te mueres, lo que todo los demas quieren pero sho no xD.`
     client.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
   
     } else if (anu.action == 'promote') {
@@ -56,11 +56,11 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
     }
     thu = await client.getStatus(anu.participants[0], MessageType.text)
     teks = 
-`👑 *NUEVO ADMIN* 👑
-👤 *Nombre:* @${num.split('@')[0]}
+`�❄️ *ADMIN NUEVO, SIUUUUU*❄️
+😎 *Nombre:* @${num.split('@')[0]}
 📋 *INFO:* ${thu.status}
 🌎 *Grupo:* ${mdata.subject}
-*Felicitaciones eres uno de los administradores.*`
+*PERFECTO, AHORA SOIS UNO DE LOS ADMINISTRADORES.*`
    let buff = await getBuffer(ppimg)
     client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
     } else if (anu.action == 'demote') {
@@ -72,11 +72,11 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
     }
     thu = await leo.getStatus(anu.participants[0], MessageType.text)
     teks = 
-`❌ *ADMIN MENOS* ❌
-👤 *Nombre:* @${num.split('@')[0]}
+`❌ *Un disque Admin menos :v* ❌
+🙄 *Nombre:* @${num.split('@')[0]}
 📋 *INFO:* ${thu.status}
 🌎 *Grupo:* ${mdata.subject} 
-*F chota ya no eres administrador.*`
+*Dea, sha no sois admin xD lo siento mucho...... na la verdad no xD.*`
     let buff = await getBuffer(ppimg)
     client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
     }
@@ -159,8 +159,9 @@ if(body == ('Hola')) {
 client.sendMessage(from, 'Hola? Te haz podido comunicar.', MessageType.text, {quoted: mek})
 }
 
-//ZONA DE COMANDOS	
-case 'welcome':
+//ZONA DE COMANDOS
+switch (command) {
+  case 'welcome':
   case 'bv':
   case 'bienvenidas':
   case 'bienvenida':
