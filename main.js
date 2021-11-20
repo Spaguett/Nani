@@ -139,6 +139,7 @@ const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
     const botAdmin = groupAdmins.includes(client.user.jid)
     const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
     const isAdmin = groupAdmins.includes(sender) || false
+    const isWelkom = isGroup ? welkom.includes(from) : false
 //AUTO RESPUESTA VERIFICADA
 if(body.includes('bot')) {
 client.sendMessage(from, 'Hola!', MessageType.text, {quoted: { key: {
