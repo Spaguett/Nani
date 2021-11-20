@@ -1,15 +1,12 @@
 <p align="center">
-<img src="./media/imagen.jpeg" width="140" height="140"/>
+<img src="./media/70978f51c20d38a53cb3343857162dae746feef6.png" width="140" height="140"/>
 </p>
 <p align="center">
-𝗖𝗥𝗘𝗔𝗗𝗢𝗥: 𝕿𝖍𝖊𝕮𝖍𝖔𝖚𝖙𝖊
+𝗖𝗥𝗘𝗔𝗗𝗢𝗥: GARU
 
 ### MIS CONTACTOS
 <p>
-<a href="http://wa.me/18299897014" target="blank"><img src="https://img.shields.io/badge/Whatsapp-30302f?style=flat&logo=whatsapp" /></a>
-<a href="http://www.instagram.com/the_choute_" target="blank"><img src="https://img.shields.io/badge/Instagram-30302f?style=flat&logo=instagram" /></a>
-<a href="https://www.youtube.com/channel/UC-HPutaDGeTPjrCId0bXQgg" target="blank"><img src="https://img.shields.io/badge/Youtube-30302f?style=flat&logo=youtube" /></a>
-
+<a href="http://wa.me/+529161875123" target="blank"><img src="https://img.shields.io/badge/Whatsapp-30302f?style=flat&logo=whatsapp" /></a>
  
 </p>
 
@@ -23,7 +20,7 @@ Instala archivos necesarios
 ```
 Clona este repositorio
  ```bash
-> git clone https://github.com/thechoute/Base
+> git clone https://github.com/PUCCA/GARU
 ```
 Inicia la instalacion
 ```bash
