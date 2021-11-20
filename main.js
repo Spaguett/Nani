@@ -7,6 +7,11 @@ const prefix = '.'
 const conn = require("./lib/index")
 conn.connect()
 const client = conn.client
+//LIB
+
+
+//SRC
+const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 client.on('group-participants-update', async (anu) => {
     const _welcom= JSON.parse(fs.readFileSync('./src/welkom.json'))
 
