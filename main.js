@@ -132,11 +132,11 @@ const senderNumber = sender.split("@")[0]
 const isMe = senderNumber == botNumber
 const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
-const groupMetadata = isGroup ? await leo.groupMetadata(from) : ''
+const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
     const groupName = isGroup ? groupMetadata.subject : ''
     const groupMembers = isGroup ? groupMetadata.participants : ''
     const groupAdmins = isGroup ? await wa.getGroupAdmins(groupMembers) : []
-    const botAdmin = groupAdmins.includes(leo.user.jid)
+    const botAdmin = groupAdmins.includes(client.user.jid)
     const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
     const isAdmin = groupAdmins.includes(sender) || false
 //AUTO RESPUESTA VERIFICADA
