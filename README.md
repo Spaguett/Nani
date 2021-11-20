@@ -20,7 +20,7 @@ Instala archivos necesarios
 ```
 Clona este repositorio
  ```bash
-> git clone https://github.com/PUCCA/GARU
+> git clone https://github.com/Spaguett/Nani
 ```
 Inicia la instalacion
 ```bash
