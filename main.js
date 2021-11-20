@@ -150,13 +150,35 @@ client.sendMessage(from, 'Hola? Te haz podido comunicar.', MessageType.text, {qu
 
 //ZONA DE COMANDOS	
 switch (command) {
+case 'bv':
+case 'bienvenidas':
+case 'bienvenida':
+              if (!isRegister) return reply(pucca.only.usrReg)
+              if (isBan) return reply (pucca.only.benned)	
+              if (!isGroup) return reply(pucca.only.group)
+              if (!isAdmin) return reply(pucca.only.admin)
+              if (args.length < 1) return reply(`${actodb}`)
+              if ((args[0]) === 'on') {
+              if (isWelkom) return reply('Este grupo ya tenia la bienvenida activa')
+              Bienvenida.push(from)
+              fs.writeFileSync('./almacen/bienvenida.json', JSON.stringify(Bienvenida))
+              reply(`Bienvenida activada exitosamente para *${groupMetadata.subject}*`)
+              } else if ((args[0]) === 'off') {
+              if (!isWelkom) return reply('Bienvenida ya esta desactivada')
+              Bienvenida.splice(from, 1)
+              fs.writeFileSync('./almacen/bienvenida.json', JSON.stringify(Bienvenida))
+              reply(`La función de Bienvenida se desactivo en el grupo *${groupMetadata.subject}*`)
+              } else {
+              reply(`${actodb}`)
+              }
+              break
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "𝕿𝖍ٌ𝖊𝕮𝖍𝖔𝖚𝖙𝖊", 'jpegThumbnail': fs.readFileSync('./media/logo.jpg')}}
+"documentMessage": { "title": "GARU", 'jpegThumbnail': fs.readFileSync('./media/logo.jpg')}}
 }})
 break		
 case 'foto':
