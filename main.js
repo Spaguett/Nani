@@ -11,7 +11,10 @@ const client = conn.client
 
 
 //LIB
-
+const owner = config.owner
+  const mods = config.mods
+  const fake = 'Leon'
+  var public = config.public
 
 //SRC
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
@@ -89,6 +92,8 @@ try {
 if (!mek.hasNewMessage) return
 if (!mek.messages) return
 if (mek.key && mek.key.remoteJid == 'status@broadcast') return
+       
+       
 
 mek = mek.messages.all()[0]
 if (!mek.message) return
