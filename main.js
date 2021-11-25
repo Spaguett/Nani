@@ -13,7 +13,7 @@ const client = conn.client
 //LIB
 const owner = config.owner
   const mods = config.mods
-  const fake = 'Leon'
+  const fake = 'pucca'
   var public = config.public
 
 //SRC
@@ -69,11 +69,11 @@ Recuerda siempre seguir las reglas y mantener una formalidad respetuosa`
     } else if (anu.action == 'demote') {
     num = anu.participants[0]
     try {
-    ppimg = await leo.getProfilePicture(`${num.split('@')[0]}@c.us`)
+    ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
     } catch {
     ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
     }
-    thu = await leo.getStatus(anu.participants[0], MessageType.text)
+    thu = await client.getStatus(anu.participants[0], MessageType.text)
     teks = 
 `❌ *Un disque Admin menos :v* ❌
 🙄 *Nombre:* @${num.split('@')[0]}
